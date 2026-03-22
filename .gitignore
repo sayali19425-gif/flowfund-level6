@@ -1,0 +1,64 @@
+# ===========================
+# NODE / FRONTEND
+# ===========================
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ===========================
+# RUST / CONTRACT
+# ===========================
+contract/target/
+target/
+**/*.rs.bk
+Cargo.lock
+
+# ===========================
+# STELLAR / SOROBAN
+# ===========================
+.soroban/
+*.wasm
+*.wat
+
+# ===========================
+# VITE
+# ===========================
+*.local
+frontend/.vite/
+
+# ===========================
+# OS FILES
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# EDITOR
+# ===========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===========================
+# LOGS
+# ===========================
+logs/
+*.log
+
+# ===========================
+# MISC
+# ===========================
+.cache/
+.temp/
