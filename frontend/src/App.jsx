@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Creator from './pages/Creator'
 import Funder from './pages/Funder'
 import History from './pages/History'
+import GaslessPayment from "./components/GaslessPayment";
 
 // Store photos in memory only
 const photoStore = {}
@@ -114,13 +115,21 @@ export default function App() {
           completed_at: newP.completedAt || newP.completed_at || null,
           created_at: newP.createdAt || newP.created_at || new Date().toISOString().slice(0, 10),
         }
+            if (!old) {
+              // Check if project with same id already exists
+              const { data: existing } = await supabase
+                .from('projects')
+                .select('id')
+                .eq('id', toStore.id)
+                .single()
 
-        if (!old) {
-          // New project — insert
-          const { error } = await supabase.from('projects').insert([toStore])
-          if (error) console.error('Insert error:', error)
-          else loadProjects()
-        } else {
+              if (!existing) {
+                const { error } = await supabase.from('projects').insert([toStore])
+                if (error) console.error('Insert error:', error)
+                else loadProjects()
+              }
+            }
+        {
           // Check if milestones or funded changed
           const milestonesChanged = JSON.stringify(old.milestones) !== JSON.stringify(newP.milestones)
           const fundedChanged = old.funded !== newP.funded
@@ -229,6 +238,11 @@ export default function App() {
           projects={projectsWithPhotos}
           nav={nav}
         />
+      )}
+
+      {/* Gasless Payment — show on a dedicated page */}
+      {page === 'gasless' && (
+        <GaslessPayment />
       )}
     </>
   )

@@ -7,9 +7,8 @@ const s = {
   disconnect: { fontFamily: 'Syne, sans-serif', fontSize: '0.75rem', color: '#ef4444', background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '6px', padding: '0.3rem 0.7rem', cursor: 'pointer', marginLeft: '0.5rem' },
   roleBadge: (role) => ({ fontFamily: 'DM Mono, monospace', fontSize: '0.7rem', color: role === 'creator' ? '#00e5ff' : '#7c3aed', background: role === 'creator' ? 'rgba(0,229,255,0.08)' : 'rgba(124,58,237,0.08)', border: `1px solid ${role === 'creator' ? 'rgba(0,229,255,0.2)' : 'rgba(124,58,237,0.2)'}`, borderRadius: '6px', padding: '0.3rem 0.7rem', marginRight: '0.5rem' }),
 }
-
 export default function Navbar({ page, nav, wallet, role, onDisconnect }) {
-  const links = ['home', 'history']
+  const links = ['home', 'history', 'gasless']   // ← added 'gasless'
   if (role === 'creator') links.splice(1, 0, 'creator')
   if (role === 'funder') links.splice(1, 0, 'funder')
 
@@ -19,10 +18,11 @@ export default function Navbar({ page, nav, wallet, role, onDisconnect }) {
       <div style={s.links}>
         {links.map(p => (
           <button key={p} style={s.link(page === p)} onClick={() => nav(p)}>
-            {p === 'home' ? 'Home' : p === 'creator' ? 'Creator' : p === 'funder' ? 'Funder' : 'History'}
+            {p === 'home' ? 'Home' : p === 'creator' ? 'Creator' : p === 'funder' ? 'Funder' : p === 'history' ? 'History' : 'Gasless Send ⚡'}
           </button>
         ))}
       </div>
+
       <div style={{ display: 'flex', alignItems: 'center' }}>
         {role && <span style={s.roleBadge(role)}>{role.toUpperCase()}</span>}
         {wallet && <span style={s.wallet}>{wallet.slice(0, 6)}...{wallet.slice(-4)}</span>}

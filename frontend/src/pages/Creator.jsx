@@ -51,8 +51,8 @@ export default function Creator({ wallet, projects, setProjects }) {
   const handleFileChange = async (e) => {
   const file = e.target.files[0]
   if (!file) return
-  if (file.size > 500 * 1024) {
-    showToast('Image too large! Use image under 500KB', 'error')
+  if (file.size > 300 * 1024) {
+    showToast('Image too large! Use image under 300KB', 'error')
     e.target.value = ''
     return
   }
@@ -63,38 +63,38 @@ export default function Creator({ wallet, projects, setProjects }) {
       const photo = ev.target.result
       const mIdx = pendingMilestoneIdx
 
-      // Update local state with photo
-      setProjects(ps => ps.map(p => {
-        if (p.id !== activeProject.id) return p
-        return {
-          ...p,
-          milestones: p.milestones.map((m, i) =>
-            i !== mIdx ? m : { ...m, status: 'submitted', photo }
-          )
-        }
-      }))
-
-      setActiveProject(prev => ({
-        ...prev,
-        milestones: prev.milestones.map((m, i) =>
+      const updatedProject = {
+        ...activeProject,
+        milestones: activeProject.milestones.map((m, i) =>
           i !== mIdx ? m : { ...m, status: 'submitted', photo }
         )
-      }))
-
-      // Save photo to Supabase directly
-      const { supabase } = await import('../supabase')
-      const currentProject = projects.find(p => p.id === activeProject.id)
-      if (currentProject) {
-        const updatedMilestones = currentProject.milestones.map((m, i) =>
-          i !== mIdx ? m : { ...m, status: 'submitted', photo }
-        )
-        await supabase
-          .from('projects')
-          .update({ milestones: updatedMilestones })
-          .eq('id', activeProject.id)
       }
 
-      showToast('Milestone submitted for funder review!')
+      // Update local state
+      setActiveProject(updatedProject)
+      setProjects(ps => ps.map(p =>
+        p.id !== activeProject.id ? p : updatedProject
+      ))
+
+      // Save directly to Supabase with photo
+      const { supabase } = await import('../supabase')
+      const milestonesToSave = updatedProject.milestones.map(m => ({
+        ...m,
+        photo: m.photo || null
+      }))
+
+      const { error } = await supabase
+        .from('projects')
+        .update({ milestones: JSON.stringify(milestonesToSave) })
+        .eq('id', activeProject.id)
+
+      if (error) {
+        console.error('Save error:', error)
+        showToast('Saved locally. Image may not show to funder.', 'error')
+      } else {
+        showToast('Milestone submitted! Funder can now review.')
+      }
+
     } catch (err) {
       console.error('Upload error:', err)
       showToast('Failed to upload. Try smaller image.', 'error')
