@@ -10,7 +10,7 @@
 ---
 
 ## 🌐 Live Demo
-👉 **[https://flowfund-level6.vercel.app](https://flowfund-level6.vercel.app)**
+👉 **[https://flowfund-level6.vercel.app](https://flowfund-level6.vercel.app/)**
 
 ---
 
