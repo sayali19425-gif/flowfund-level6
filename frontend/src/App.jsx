@@ -5,9 +5,9 @@ import Home from './pages/Home'
 import Creator from './pages/Creator'
 import Funder from './pages/Funder'
 import History from './pages/History'
-import GaslessPayment from "./components/GaslessPayment";
+import GaslessPayment from "./components/GaslessPayment"
+import Dashboard from './pages/Dashboard'
 
-// Store photos in memory only
 const photoStore = {}
 
 export default function App() {
@@ -17,7 +17,6 @@ export default function App() {
   const [projects, setProjectsState] = useState([])
   const [loading, setLoading] = useState(true)
 
-  // Load wallet and role from localStorage
   useEffect(() => {
     const savedWallet = localStorage.getItem('flowfund_wallet')
     const savedRole = localStorage.getItem('flowfund_role')
@@ -33,53 +32,44 @@ export default function App() {
     if (role) localStorage.setItem('flowfund_role', role)
   }, [role])
 
-  // Load projects from Supabase + real time updates
   useEffect(() => {
     loadProjects()
-
     const subscription = supabase
       .channel('projects-channel')
       .on('postgres_changes', {
         event: '*',
         schema: 'public',
         table: 'projects'
-      }, () => {
-        loadProjects()
-      })
+      }, () => { loadProjects() })
       .subscribe()
-
     return () => supabase.removeChannel(subscription)
   }, [])
 
   const loadProjects = async () => {
-  try {
-    const { data, error } = await supabase
-      .from('projects')
-      .select('*')
-      .order('id', { ascending: false })
-
-    if (error) { console.error('Load error:', error); return }
-
-    const formatted = (data || []).map(p => ({
-      ...p,
-      totalXLM: p.total_xlm,
-      projectUrl: p.project_url,
-      completedAt: p.completed_at,
-      createdAt: p.created_at,
-      milestones: typeof p.milestones === 'string'
-        ? JSON.parse(p.milestones)
-        : p.milestones || [],
-    }))
-
-    setProjectsState(formatted)
-  } catch (err) {
-    console.error('Load error:', err)
-  } finally {
-    setLoading(false)
+    try {
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .order('id', { ascending: false })
+      if (error) { console.error('Load error:', error); return }
+      const formatted = (data || []).map(p => ({
+        ...p,
+        totalXLM: p.total_xlm,
+        projectUrl: p.project_url,
+        completedAt: p.completed_at,
+        createdAt: p.created_at,
+        milestones: typeof p.milestones === 'string'
+          ? JSON.parse(p.milestones)
+          : p.milestones || [],
+      }))
+      setProjectsState(formatted)
+    } catch (err) {
+      console.error('Load error:', err)
+    } finally {
+      setLoading(false)
+    }
   }
-}
 
-  // Merge photos from memory into projects
   const projectsWithPhotos = projects.map(p => ({
     ...p,
     milestones: (p.milestones || []).map((m, i) => ({
@@ -91,18 +81,13 @@ export default function App() {
   const setProjects = (updater) => {
     setProjectsState(prev => {
       const next = typeof updater === 'function' ? updater(prev) : updater
-
-      // Save photos to memory
       next.forEach(p => {
         p.milestones.forEach((m, i) => {
           if (m.photo) photoStore[`${p.id}_${i}`] = m.photo
         })
       })
-
-      // Sync to Supabase
       next.forEach(async newP => {
         const old = prev.find(p => p.id === newP.id)
-
         const toStore = {
           id: newP.id,
           creator: newP.creator,
@@ -115,25 +100,17 @@ export default function App() {
           completed_at: newP.completedAt || newP.completed_at || null,
           created_at: newP.createdAt || newP.created_at || new Date().toISOString().slice(0, 10),
         }
-            if (!old) {
-              // Check if project with same id already exists
-              const { data: existing } = await supabase
-                .from('projects')
-                .select('id')
-                .eq('id', toStore.id)
-                .single()
-
-              if (!existing) {
-                const { error } = await supabase.from('projects').insert([toStore])
-                if (error) console.error('Insert error:', error)
-                else loadProjects()
-              }
-            }
-        {
-          // Check if milestones or funded changed
+        if (!old) {
+          const { data: existing } = await supabase
+            .from('projects').select('id').eq('id', toStore.id).single()
+          if (!existing) {
+            const { error } = await supabase.from('projects').insert([toStore])
+            if (error) console.error('Insert error:', error)
+            else loadProjects()
+          }
+        } else {
           const milestonesChanged = JSON.stringify(old.milestones) !== JSON.stringify(newP.milestones)
           const fundedChanged = old.funded !== newP.funded
-
           if (milestonesChanged || fundedChanged) {
             const { error } = await supabase
               .from('projects')
@@ -148,7 +125,6 @@ export default function App() {
           }
         }
       })
-
       return next
     })
   }
@@ -175,27 +151,18 @@ export default function App() {
 
   if (loading) return (
     <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      background: '#020f0a',
-      flexDirection: 'column',
-      gap: '1rem'
+      minHeight: '100vh', display: 'flex', alignItems: 'center',
+      justifyContent: 'center', background: '#020f0a',
+      flexDirection: 'column', gap: '1rem'
     }}>
       <div style={{
-        width: 44,
-        height: 44,
+        width: 44, height: 44,
         border: '3px solid rgba(16,185,129,0.2)',
         borderTop: '3px solid #10b981',
         borderRadius: '50%',
         animation: 'spin 0.8s linear infinite'
       }} />
-      <div style={{
-        color: '#10b981',
-        fontFamily: 'DM Mono, monospace',
-        fontSize: '0.9rem'
-      }}>
+      <div style={{ color: '#10b981', fontFamily: 'DM Mono, monospace', fontSize: '0.9rem' }}>
         Loading FlowFund...
       </div>
     </div>
@@ -234,15 +201,13 @@ export default function App() {
         />
       )}
       {page === 'history' && (
-        <History
-          projects={projectsWithPhotos}
-          nav={nav}
-        />
+        <History projects={projectsWithPhotos} nav={nav} />
       )}
-
-      {/* Gasless Payment — show on a dedicated page */}
       {page === 'gasless' && (
         <GaslessPayment />
+      )}
+      {page === 'dashboard' && (
+        <Dashboard />
       )}
     </>
   )
