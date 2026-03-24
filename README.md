@@ -9,6 +9,13 @@
 ## Live Demo
 👉 [https://flowfund-level6.vercel.app](https://flowfund-level6.vercel.app)
 
+## Community Contribution
+Contributed to Stellar open source ecosystem:
+- 🔗 [stellar/js-stellar-sdk #1350 — Add FeeBumpTransaction code example to README](https://github.com/stellar/js-stellar-sdk/issues/1350)
+
+## License
+MIT
+
 ## What is FlowFund?
 FlowFund releases payments only when milestones are delivered and verified — trustless, transparent, and on-chain. Creators submit proof, funders approve, and XLM is released automatically.
 
