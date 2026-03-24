@@ -9,20 +9,45 @@ export default function GaslessPayment() {
   const [error, setError] = useState(null);
 
   const handleSend = async () => {
-    setLoading(true);
-    setError(null);
-    setTxHash(null);
+    // Input validation
+    if (!destination || destination.trim().length === 0) {
+      setError("Destination address is required")
+      return
+    }
+
+    if (!destination.startsWith('G') || destination.trim().length !== 56) {
+      setError("Invalid Stellar address — must start with G and be 56 characters")
+      return
+    }
+
+    if (!amount || isNaN(amount) || parseFloat(amount) <= 0) {
+      setError("Amount must be a positive number")
+      return
+    }
+
+    if (parseFloat(amount) > 10000) {
+      setError("Amount cannot exceed 10,000 XLM per transaction")
+      return
+    }
+
+    setLoading(true)
+    setError(null)
+    setTxHash(null)
 
     try {
-      const senderSecret = import.meta.env.VITE_SPONSOR_SECRET;
-      const hash = await sendGaslessPayment(senderSecret, destination, amount);
-      setTxHash(hash);
+      const senderSecret = import.meta.env.VITE_SPONSOR_SECRET
+      const hash = await sendGaslessPayment(
+        senderSecret,
+        destination.trim(),
+        amount
+      )
+      setTxHash(hash)
     } catch (err) {
-      setError(err.message);
+      setError(err.message)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   return (
     <div style={{ maxWidth: 480, margin: "0 auto", padding: 24 }}>
