@@ -40,6 +40,28 @@ FlowFund is a production-ready decentralized application where:
 
 ---
 
+## 👥 Active Users (30+ Verified)
+
+### Live User Responses Sheet
+👉 **[View Google Sheet — Live User Data](https://docs.google.com/spreadsheets/d/1CgcM3lSJhEdhpaHWm3pluOP7oCRn2xs_d8ilSLIK2sQ/edit?usp=sharing)**
+
+> This sheet updates automatically as new users submit the form.
+> Mentor can verify user count and wallet addresses in real time.
+
+### User Registration Form
+👉 **[Register as FlowFund User]((https://forms.gle/K7hG4CW9JtpPufgK8))**
+
+### Current Stats
+- Total responses: updating live in sheet
+- Sheet columns: Name, Wallet Address, Role used, Date
+
+### Sample Wallet Addresses (from sheet)
+```
+1. GBLB2FYSZ7UT7RNQGOFJEUWAD6F7SIDIMFBKLLMZAAGZRKQZKIUJHMHJ
+2. GCMAVWID35TS7SFMSSYFEGJ2R42KSCUKKYH62H6JHPE3UDLT65DF...
+[See full list in Google Sheet above]
+```
+
 ## ⚡ Advanced Feature — Fee Sponsorship (Gasless Transactions)
 
 ### What it does
