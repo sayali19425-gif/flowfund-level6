@@ -49,7 +49,7 @@ FlowFund is a production-ready decentralized application where:
 > Mentor can verify user count and wallet addresses in real time.
 
 ### User Registration Form
-👉 **[Register as FlowFund User]((https://forms.gle/K7hG4CW9JtpPufgK8))**
+👉 **[Register as FlowFund User](https://forms.gle/K7hG4CW9JtpPufgK8)**
 
 ### Current Stats
 - Total responses: updating live in sheet
