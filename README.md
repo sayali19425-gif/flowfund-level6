@@ -169,42 +169,20 @@ Full migration history: [MIGRATIONS.md](./MIGRATIONS.md)
 
 ---
 
-## 👥 Active User Wallet Addresses
+## 👥 Testnet User Wallet Addresses
 
-> 30+ verified users who connected wallets and interacted with FlowFund on Stellar Testnet.
-> All addresses verifiable on [Stellar Expert Testnet Explorer](https://stellar.expert/explorer/testnet)
+All transactions verifiable on testnet 
 
-```
-1.  GBLB2FYSZ7UT7RNQGOFJEUWAD6F7SIDIMFBKLLMZAAGZRKQZKIUJHMHJ
-2.  GCMAVWID35TS7SFMSSYFEGJ2R42KSCUKKYH62H6JHPE3UDLT65DF****
-3.  [add wallet address]
-4.  [add wallet address]
-5.  [add wallet address]
-6.  [add wallet address]
-7.  [add wallet address]
-8.  [add wallet address]
-9.  [add wallet address]
-10. [add wallet address]
-11. [add wallet address]
-12. [add wallet address]
-13. [add wallet address]
-14. [add wallet address]
-15. [add wallet address]
-16. [add wallet address]
-17. [add wallet address]
-18. [add wallet address]
-19. [add wallet address]
-20. [add wallet address]
-21. [add wallet address]
-22. [add wallet address]
-23. [add wallet address]
-24. [add wallet address]
-25. [add wallet address]
-26. [add wallet address]
-27. [add wallet address]
-28. [add wallet address]
-29. [add wallet address]
-30. [add wallet address]
+---## 👥 Project Participants
+
+| # | Role    | Email ID                     | Wallet Address                                                                 | Explorer Link |
+|---|---------|-----------------------------|---------------------------------------------------------------------------------|--------------|
+| 1 | Funder  | sayali19425@gmail.com       | `GCMAVWID35TS7SFMSSYFEGJ2R42KSCUKKYH62H6JHPE3UDLT65DPLIS3`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GCMAVWID35TS7SFMSSYFEGJ2R42KSCUKKYH62H6JHPE3UDLT65DPLIS3) |
+| 2 | Creator | rutvikghadge933@gmail.com   | `GD5B3XLT2WRSACEFMQP35MYWRIMGK3HIJVIRFL6A4KOXFSSH5XJYFTVS`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GD5B3XLT2WRSACEFMQP35MYWRIMGK3HIJVIRFL6A4KOXFSSH5XJYFTVS) |
+| 3 | Creator | sanikanaikare19@gmail.com   | `GDGFJBGBADBOM6Z3BNGENHEBRIX2E6XUXVCCZ2OKH6GOFUE2USZUQNDU`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GDGFJBGBADBOM6Z3BNGENHEBRIX2E6XUXVCCZ2OKH6GOFUE2USZUQNDU) |
+| 4 | Creator | maubunny0524@gmail.com      | `GCTQ2N6VIM3DYHMMHU2TGLIOSWWD7PXNNONSGDPUA4M7ZYZ6ZURATV3X`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GCTQ2N6VIM3DYHMMHU2TGLIOSWWD7PXNNONSGDPUA4M7ZYZ6ZURATV3X) |
+| 5 | Creator | kobalpriya1@gmail.com       | `GB7OO2BO2HEE4R2IQINIECMVEXRUISKX3TNN2LHY4BIW3WS7GNETKI2R`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GB7OO2BO2HEE4R2IQINIECMVEXRUISKX3TNN2LHY4BIW3WS7GNETKI2R) |
+| 6 | Creator | radhamane01933@gmail.com    | `GC5YOINWNQMJUPYS5NJHNXI262WVPLMI5CNE6KBZCA67DWHF77WF7NML`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GC5YOINWNQMJUPYS5NJHNXI262WVPLMI5CNE6KBZCA67DWHF77WF7NML) |
 ```
 
 ---
