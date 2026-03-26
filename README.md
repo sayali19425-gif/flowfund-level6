@@ -12,6 +12,11 @@
 ## 🌐 Live Demo
 👉 **[https://flowfund-level6.vercel.app](https://flowfund-level6.vercel.app/)**
 
+## Metrics dashboard
+<img width="1909" height="865" alt="Screenshot 2026-03-26 220225" src="https://github.com/user-attachments/assets/b6e61965-1bb3-445b-8c95-92b9c4eaaae3" />
+
+<img width="1919" height="870" alt="Screenshot 2026-03-26 220242" src="https://github.com/user-attachments/assets/a6823039-351f-40a3-be22-82dc243ffaf1" />
+
 ---
 
 ## 📌 What is FlowFund?
@@ -137,11 +142,18 @@ Full checklist: [SECURITY.md](./SECURITY.md)
 - Project: `flowfund` (javascript-react)
 - Captures: all runtime errors, performance traces, session replays
 
+<img width="1918" height="863" alt="Screenshot 2026-03-26 215512" src="https://github.com/user-attachments/assets/ad48370c-a576-4167-9dea-06f35de431d2" />
+
+
 ### UptimeRobot — Uptime Monitoring
 - URL monitored: `https://flowfund-level6.vercel.app`
 - Check interval: every 5 minutes
 - Current uptime: **100%**
 - Incidents: **0**
+- 
+<img width="1906" height="865" alt="Screenshot 2026-03-26 215807" src="https://github.com/user-attachments/assets/184ba70f-2142-4d82-8f60-2ca33746e8d3" />
+
+<img width="1911" height="868" alt="Screenshot 2026-03-26 215909" src="https://github.com/user-attachments/assets/42cda676-9bd2-42f5-89c9-e6ba317a747b" />
 
 ---
 
@@ -166,24 +178,6 @@ CREATE INDEX IF NOT EXISTS idx_projects_completed_at
 Full migration history: [MIGRATIONS.md](./MIGRATIONS.md)
 
 **Result:** Query time reduced from O(n) full table scan to O(log n) indexed lookup.
-
----
-
-## 👥 Testnet User Wallet Addresses
-
-All transactions verifiable on testnet 
-
----## 👥 Project Participants
-
-| # | Role    | Email ID                     | Wallet Address                                                                 | Explorer Link |
-|---|---------|-----------------------------|---------------------------------------------------------------------------------|--------------|
-| 1 | Funder  | sayali19425@gmail.com       | `GCMAVWID35TS7SFMSSYFEGJ2R42KSCUKKYH62H6JHPE3UDLT65DPLIS3`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GCMAVWID35TS7SFMSSYFEGJ2R42KSCUKKYH62H6JHPE3UDLT65DPLIS3) |
-| 2 | Creator | rutvikghadge933@gmail.com   | `GD5B3XLT2WRSACEFMQP35MYWRIMGK3HIJVIRFL6A4KOXFSSH5XJYFTVS`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GD5B3XLT2WRSACEFMQP35MYWRIMGK3HIJVIRFL6A4KOXFSSH5XJYFTVS) |
-| 3 | Creator | sanikanaikare19@gmail.com   | `GDGFJBGBADBOM6Z3BNGENHEBRIX2E6XUXVCCZ2OKH6GOFUE2USZUQNDU`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GDGFJBGBADBOM6Z3BNGENHEBRIX2E6XUXVCCZ2OKH6GOFUE2USZUQNDU) |
-| 4 | Creator | maubunny0524@gmail.com      | `GCTQ2N6VIM3DYHMMHU2TGLIOSWWD7PXNNONSGDPUA4M7ZYZ6ZURATV3X`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GCTQ2N6VIM3DYHMMHU2TGLIOSWWD7PXNNONSGDPUA4M7ZYZ6ZURATV3X) |
-| 5 | Creator | kobalpriya1@gmail.com       | `GB7OO2BO2HEE4R2IQINIECMVEXRUISKX3TNN2LHY4BIW3WS7GNETKI2R`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GB7OO2BO2HEE4R2IQINIECMVEXRUISKX3TNN2LHY4BIW3WS7GNETKI2R) |
-| 6 | Creator | radhamane01933@gmail.com    | `GC5YOINWNQMJUPYS5NJHNXI262WVPLMI5CNE6KBZCA67DWHF77WF7NML`                      | [View ↗](https://stellar.expert/explorer/testnet/account/GC5YOINWNQMJUPYS5NJHNXI262WVPLMI5CNE6KBZCA67DWHF77WF7NML) |
-```
 
 ---
 
