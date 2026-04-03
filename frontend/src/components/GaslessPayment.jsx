@@ -52,9 +52,34 @@ export default function GaslessPayment() {
   return (
     <div style={{ maxWidth: 480, margin: "0 auto", padding: 24 }}>
       <h2>Send Money (Gasless)</h2>
-      <p style={{ color: "gray", fontSize: 14 }}>
-        No XLM needed for fees — FlowFund sponsors your transaction.
-      </p>
+        <p style={{ color: "gray", fontSize: 14, lineHeight: 1.6 }}>
+          No XLM needed for fees — FlowFund sponsors your transaction.
+        </p>
+
+        <div style={{
+          background: 'rgba(0,229,255,0.05)',
+          border: '1px solid rgba(0,229,255,0.15)',
+          borderRadius: 8,
+          padding: 12,
+          marginBottom: 16,
+          fontSize: 13,
+          color: '#5a7090',
+          lineHeight: 1.7,
+        }}>
+          <strong style={{ color: '#00e5ff' }}>How it works:</strong>
+          <br />
+          1. Enter the recipient's Stellar wallet address (starts with G...)
+          <br />
+          2. Enter the amount in XLM you want to send
+          <br />
+          3. Click Send — FlowFund pays the network fee for you!
+          <br />
+          <strong style={{ color: '#00e5ff' }}>Need a testnet wallet?</strong> Install{' '}
+          <a href="https://www.freighter.app/" target="_blank" rel="noreferrer" 
+            style={{ color: '#00e5ff' }}>Freighter Wallet</a> and fund it at{' '}
+          <a href="https://friendbot.stellar.org" target="_blank" rel="noreferrer"
+            style={{ color: '#00e5ff' }}>Friendbot</a>
+        </div>
 
       <input
         placeholder="Destination public key (G...)"
