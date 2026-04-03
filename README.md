@@ -99,13 +99,16 @@ Table 1 - New users data
 | 34 | Aditya Gahire          | [adityagahire@gmail.com](mailto:adityagahire@gmail.com)                         | GBO57NEMG5HQIO47A2ZDHSGHN7G5RTMCRMGWXVDYPQGWBKLSSHJEWX35 | Smooth            | [https://stellar.expert/explorer/testnet/account/GBO57NEMG5HQIO47A2ZDHSGHN7G5RTMCRMGWXVDYPQGWBKLSSHJEWX35](https://stellar.expert/explorer/testnet/account/GBO57NEMG5HQIO47A2ZDHSGHN7G5RTMCRMGWXVDYPQGWBKLSSHJEWX35) |
 | 35 | Sudhakar Sutar         | [sudhakarsutar101@gmail.com](mailto:sudhakarsutar101@gmail.com)                 | GALULA4PSYS4AVX7AIUDZ5IVUUWJAGT4BECMICA3JQMCO3HICKQEKJXS | Good UI           | [https://stellar.expert/explorer/testnet/account/GALULA4PSYS4AVX7AIUDZ5IVUUWJAGT4BECMICA3JQMCO3HICKQEKJXS](https://stellar.expert/explorer/testnet/account/GALULA4PSYS4AVX7AIUDZ5IVUUWJAGT4BECMICA3JQMCO3HICKQEKJXS) |
 | 36 | Krishna                | [krishnarakshe0812@gmail.com](mailto:krishnarakshe0812@gmail.com)               | GB4BMVNNWKLWQKXQ7CAOX6YWT6NI7WMEDZQZ26IYQDL4JKCQS7PJIEET | Needs explanation | [https://stellar.expert/explorer/testnet/account/GB4BMVNNWKLWQKXQ7CAOX6YWT6NI7WMEDZQZ26IYQDL4JKCQS7PJIEET](https://stellar.expert/explorer/testnet/account/GB4BMVNNWKLWQKXQ7CAOX6YWT6NI7WMEDZQZ26IYQDL4JKCQS7PJIEET) |
-```                                                                                                                                                                                                        |
+
 
 User Feedback: : Fixed ✅
+
 User 1 : Feedback : "Gasless send needs more explanation" → add help text 
+
 <img width="1915" height="856" alt="image" src="https://github.com/user-attachments/assets/c0424b2f-472c-4532-b4a1-0fb97c061101" />
 
 User 2 : Feedback : "Dashboard tab is hard to find" → improve navbar styling
+
 <img width="1915" height="101" alt="image" src="https://github.com/user-attachments/assets/1b2a6df7-4fa0-4a05-b990-6ab67874cdce" />
 <img width="1905" height="871" alt="image" src="https://github.com/user-attachments/assets/78068821-60f2-4c76-ad3e-6fc770934832" />
 
