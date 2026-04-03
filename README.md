@@ -66,7 +66,21 @@ FlowFund is a production-ready decentralized application where:
 2. GCMAVWID35TS7SFMSSYFEGJ2R42KSCUKKYH62H6JHPE3UDLT65DF...
 [See full list in Google Sheet above]
 ```
+User Feedback: : Fixed ✅
+User 1 : Feedback : "Gasless send needs more explanation" → add help text 
+<img width="1915" height="856" alt="image" src="https://github.com/user-attachments/assets/c0424b2f-472c-4532-b4a1-0fb97c061101" />
 
+User 2 : Feedback : "Dashboard tab is hard to find" → improve navbar styling
+<img width="1915" height="101" alt="image" src="https://github.com/user-attachments/assets/1b2a6df7-4fa0-4a05-b990-6ab67874cdce" />
+<img width="1905" height="871" alt="image" src="https://github.com/user-attachments/assets/78068821-60f2-4c76-ad3e-6fc770934832" />
+
+### Table — User Feedback Implementation
+Commit Ids:
+| User Name | User Email | User Wallet Address | Feedback Given | Commit ID |
+|---|---|---|---|---|
+| User 1 | friend1@gmail.com | GXXX... | "Gasless send needs more explanation" | aa55275 |
+| User 2 | friend2@gmail.com | GXXX... | "Dashboard tab is hard to find" | 439c031 |
+```
 ## ⚡ Advanced Feature — Fee Sponsorship (Gasless Transactions)
 
 ### What it does
