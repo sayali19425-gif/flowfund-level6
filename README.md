@@ -116,8 +116,8 @@ User 2 : Feedback : "Dashboard tab is hard to find" → improve navbar styling
 Commit Ids:
 | User Name | User Email | User Wallet Address | Feedback Given | Commit ID |
 |---|---|---|---|---|
-| User 1 | krishnarakshe0812@gmail.com | GB4BMVNNWKLWQKXQ7CAOX6YWT6NI7WMEDZQZ26IYQDL4JKCQS7PJIEET | "Gasless send needs more explanation" | aa55275 |
-| User 2 | jadhavgauri347@gmail.com | GAHWHBKOQRUF3NY5BLRAFPEBWMN2RAAB73F3IPSGIRRIRX6CZ3PERSCH | "Dashboard tab is hard to find" | 439c031 |
+| User 1 | krishnarakshe0812@gmail.com | GB4BMVNNWKLWQKXQ7CAOX6YWT6NI7WMEDZQZ26IYQDL4JKCQS7PJIEET | "Gasless send needs more explanation" | 439c031 |
+| User 2 | jadhavgauri347@gmail.com | GAHWHBKOQRUF3NY5BLRAFPEBWMN2RAAB73F3IPSGIRRIRX6CZ3PERSCH | "Dashboard tab is hard to find" | aa55275 |
 ```
 ## ⚡ Advanced Feature — Fee Sponsorship (Gasless Transactions)
 
